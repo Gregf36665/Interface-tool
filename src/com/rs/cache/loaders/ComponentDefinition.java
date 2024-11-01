@@ -1,10 +1,14 @@
 package com.rs.cache.loaders;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import GUI.InterfaceGui;
 import com.alex.io.InputStream;
 import com.alex.io.OutputStream;
 import com.interfaces.components.ComponentConstants;
@@ -13,6 +17,8 @@ import com.logging.LogFactory;
 import com.interfaces.components.ComponentPosition;
 import com.interfaces.InterfaceUtils;
 import com.rs.cache.Cache;
+
+import javax.swing.*;
 
 /**
  * Interface tool
@@ -208,7 +214,7 @@ public class ComponentDefinition {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-    	return bytesArray;
+        return bytesArray;
     }
 
 	public static int getInterfaceDefinitionsSize() {
@@ -218,6 +224,11 @@ public class ComponentDefinition {
 	public static int getInterfaceDefinitionsComponentsSize(int interfaceId) {
 		return Cache.STORE.getIndexes()[3].getLastFileId(interfaceId) + 1;
 	}
+
+	public static int[] getChildren(int currentInterface, int selectedComp) {
+		return new int[]{0, 0};
+	}
+
 	/**
 
 	 * uncoding

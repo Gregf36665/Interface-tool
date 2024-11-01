@@ -245,13 +245,10 @@ public class InterfaceGui extends JFrame {
         JButton btnDelete = new JButton("delete");
         btnDelete.setToolTipText("Deletes the selected component");
         btnDelete.setBounds(728, 404, 78, 32);
-        JButton btnDelete = new JButton("delete");
-        btnDelete.setToolTipText("Deletes the selected component");
-        btnDelete.setBounds(728, 404, 78, 32);
         btnDelete.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
 
-                if (selectedComp <= 0) {
+                if (selectedComp < 0) {
                     JOptionPane.showMessageDialog(scrollPane_2, "Please select an component first.");
                 } else {
                     ComponentDefinition c = ComponentDefinition.getInterfaceComponent(currentInterface, selectedComp);
